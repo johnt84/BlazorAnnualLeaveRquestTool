@@ -31,7 +31,7 @@ interface AnnualLeaveRequest {
 
 const NewRequestForm = ({ handleAddRequest, handleSaveAddRequest }: Props) => {
   const emptyRequest: AnnualLeaveRequest = {
-    annualLeaveRequestId: 0,
+    annualLeaveRequestID: 0,
     year: "2025",
     paidLeaveType: "",
     leaveType: "",

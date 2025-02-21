@@ -1,7 +1,7 @@
 import DetailRow from "./DetailRow";
 
 interface AnnualLeaveRequest {
-  annualLeaveRequestId: number;
+  annualLeaveRequestID: number;
   year: string;
   paidLeaveType: string;
   leaveType: string;
