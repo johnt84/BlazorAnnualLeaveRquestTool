@@ -1,7 +1,7 @@
 import TableRow from "./TableRow";
 
 interface AnnualLeaveRequest {
-  annualLeaveRequestId: number;
+  annualLeaveRequestID: number;
   year: string;
   paidLeaveType: string;
   leaveType: string;
@@ -60,7 +60,7 @@ const Table = ({
         <tbody>
           {requests.map((item) => (
             <TableRow
-              key={item.annualLeaveRequestId}
+              key={item.annualLeaveRequestID}
               request={item}
               handleViewRequest={handleViewRequest}
               handleEditRequest={handleEditRequest}

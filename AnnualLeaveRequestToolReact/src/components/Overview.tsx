@@ -6,7 +6,7 @@ import EditRequestForm from "./EditRequestForm";
 import DeleteRequestForm from "./DeleteRequestForm";
 
 interface AnnualLeaveRequest {
-  annualLeaveRequestId: number;
+  annualLeaveRequestID: number;
   year: string;
   paidLeaveType: string;
   leaveType: string;
@@ -38,13 +38,13 @@ const Overview = () => {
 
   const [deleteRequest, setDeleteRequest] = useState<AnnualLeaveRequest>();
 
-    const [viewRequest, setViewRequest] = useState<AnnualLeaveRequest>();
+  const [viewRequest, setViewRequest] = useState<AnnualLeaveRequest>();
 
-   const apiUrlPrefix = "";
+  const apiUrlPrefix = "https://localhost:44375";
 
-   const apiUrlSuffix = "/api/AnnualLeaveRequest";
+  const apiUrlSuffix = "/api/AnnualLeaveRequest";
 
-   const apiUrl = apiUrlPrefix + apiUrlSuffix;
+  const apiUrl = apiUrlPrefix + apiUrlSuffix;
 
   useEffect(() => {
     const fetchRequests = async () => {
@@ -55,7 +55,7 @@ const Overview = () => {
   }, []);
 
   async function fetchRequestsAsync(): Promise<AnnualLeaveRequest[]> {
-      const response = await fetch(apiUrl + "/GetRequestsForYear/2025");
+    const response = await fetch(apiUrl + "/GetRequestsForYear/2025");
 
     const data = await response.json();
     return data;
@@ -65,7 +65,7 @@ const Overview = () => {
     request?: AnnualLeaveRequest
   ): Promise<AnnualLeaveRequest> {
     const response = await fetch(
-        apiUrl + "/Get" + `/${request?.annualLeaveRequestId}`
+      apiUrl + "/Get" + `/${request?.annualLeaveRequestID}`
     );
 
     const data = await response.json();
@@ -73,7 +73,7 @@ const Overview = () => {
   }
 
   const postRequestAsync = async (request: AnnualLeaveRequest) => {
-      await fetch(apiUrl, {
+    await fetch(apiUrl, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -84,7 +84,7 @@ const Overview = () => {
   };
 
   const putRequestAsync = async (request: AnnualLeaveRequest) => {
-      await fetch(apiUrl, {
+    await fetch(apiUrl, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -95,7 +95,7 @@ const Overview = () => {
   };
 
   const deleteRequestAsync = async (request?: AnnualLeaveRequest) => {
-      await fetch(apiUrl + `/${request?.annualLeaveRequestId}`, {
+    await fetch(apiUrl + `/${request?.annualLeaveRequestID}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",
@@ -129,7 +129,7 @@ const Overview = () => {
 
     setRequests(
       requests.map((request) => {
-        if (request.annualLeaveRequestId === editRequest.annualLeaveRequestId) {
+        if (request.annualLeaveRequestID === editRequest.annualLeaveRequestID) {
           return {
             ...request,
             startDate: editRequest.startDate,

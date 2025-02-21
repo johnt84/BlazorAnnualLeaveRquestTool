@@ -6,7 +6,7 @@ interface Props {
 }
 
 interface AnnualLeaveRequest {
-  annualLeaveRequestId: number;
+  annualLeaveRequestID: number;
   year: string;
   paidLeaveType: string;
   leaveType: string;

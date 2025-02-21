@@ -1,7 +1,7 @@
 import moment from "moment";
 
 interface AnnualLeaveRequest {
-  annualLeaveRequestId: number;
+  annualLeaveRequestID: number;
   year: string;
   paidLeaveType: string;
   leaveType: string;
