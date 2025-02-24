@@ -155,15 +155,16 @@ const Overview = () => {
   };
 
   const handleDeleteRequest = (request?: AnnualLeaveRequest) => {
-    deleteRequestAsync(request);
-
     setDeleteRequest(request);
   };
 
   const handleConfirmDeleteRequest = (request: AnnualLeaveRequest) => {
+    deleteRequestAsync(request);
+
     setRequests((currentRequests) => {
       return currentRequests.filter(
-        (currentRequest) => currentRequest.id !== request.id
+        (currentRequest) =>
+          currentRequest.annualLeaveRequestID !== request.annualLeaveRequestID
       );
     });
   };
